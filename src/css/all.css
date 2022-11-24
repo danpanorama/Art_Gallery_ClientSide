@@ -1,0 +1,166 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.cw{
+}
+.linktxt{
+    text-decoration: none;
+    color: #262626;
+}
+.linktxt2{
+    text-decoration: none;
+    color: white;
+}
+.flexrow{
+    display: flex;
+    flex-direction: row;
+
+}
+.felxrowtocol{
+    display: flex;
+    flex-direction: row;
+}
+.flexcol{
+    display: flex;
+    flex-direction: column;
+
+}
+.h100{
+    height: 100%;
+}
+.flexcenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.w100{
+    width: 100%;
+}
+.headre{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.img{
+    height: 100%;
+    width: 100%;
+  
+  object-fit: cover;
+ 
+ 
+}
+.imghit{
+    height: 300px;
+    width: 300px;
+}
+
+.overfloscroll{
+    overflow: scroll;
+}
+.centergallery{
+    width: 70%;
+    margin: auto;
+}
+.option{
+    color: black;
+    
+}
+
+.activpopup{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease;
+
+
+}
+.popup{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+transition: all .5s ease;
+}
+.disablepopup{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease;
+    opacity: 0;
+    visibility: hidden;
+
+}
+.center{
+    
+    height: 80%;
+
+
+}
+.white{
+    color: white;
+    text-align: right;
+  
+}
+.gdd{
+    color: white;
+   
+
+    text-transform: uppercase;
+}
+.imgf{
+    height: 90%;
+    width: auto;
+    object-fit: cover;
+    padding: 18px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+   
+}
+.butonmove{
+    font-size: 2rem;
+    color: gray;
+    cursor: pointer;
+}
+
+.exitbutton{
+    margin-left: 30px;
+   
+}
+.butonmove:hover{
+    color: white;
+}
+.arrowleft{
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
