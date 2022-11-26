@@ -95,12 +95,12 @@ function getback(e){
        
        
         return(
-          <div data-aos="fade-up" data-aos-delay={i+"00"}   key={e.number} className="image_box">
-            <div  className="image">
+          <div  data-aos="fade-up" data-aos-delay={i+"00"}   key={e.number} className="image_box">
+         
             <LazyLoad className="image" height={200} offset={100}>
               <img  onClick={getimg} id={url + "psik_" + e.name + "psik_" + e.size}  title={i} className='img ' src={'https://morcmario.com/upload' + immg[1] } alt="" />
             </LazyLoad>
-            </div>
+          
         
           </div>
           

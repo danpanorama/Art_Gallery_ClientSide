@@ -60,13 +60,14 @@ function Uploadform(props) {
   <option value="print">print</option>
 </select>
 
-            <div
+            {/* <div
               onClick={(e) => {
                 fileref.current.click();
               }}
             >
               upload
-            </div>
+            </div> */}
+            <br />
 
             <input type="submit" />
           </form>
