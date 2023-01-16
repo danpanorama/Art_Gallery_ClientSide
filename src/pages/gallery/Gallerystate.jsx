@@ -18,7 +18,7 @@ const [pointer, setpointer] = useState(0)
 useEffect(() => {
   
   AOS.init({
-    duration : 2000
+    duration : 1000
   });
 }, []);
 
