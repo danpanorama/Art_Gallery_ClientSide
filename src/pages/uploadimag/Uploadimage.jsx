@@ -15,11 +15,17 @@ function Uploadimage(props) {
   const dispatch = useDispatch();
   const user =  useSelector((state)=>state.users);
   const item =  useSelector((state)=>state.item);
-  const [fileState,setFileState]= useState()
+  const [openwindow,setWindow]= useState(false)
   const [error,setErrorState]= useState('')
 
   const [namestate,setnamestate]= useState('')
   const [passstate,setpassstate]= useState('')
+
+  const [namenamestate,setNameState]= useState('')
+  const [date,setDateState]= useState('')
+  const [size,setSizeState]= useState('')
+
+  
   const [Lodar,setLoader]= useState(false)
   const [msg,setmsg]= useState([])
 
@@ -28,6 +34,13 @@ function Uploadimage(props) {
   function setValeuOnChane(e){
     setnamestate(e.target.value)
 
+
+
+  }
+
+
+  function openwind(){
+    setWindow(!openwindow)
   }
 
   function setpassValeuOnChane(e){
@@ -152,24 +165,159 @@ function logins(e){
 }
 
 
+
+function getname(e){
+  setNameState(e.target.value)
+
+}
+function getsize(e){
+  setSizeState(e.target.value)
+
+}
+function getdate(e){
+  setDateState(e.target.value)
+
+}
+
+
+
+async function changeName(e){
+  try {
+    setLoader(true)
+    
+    await AxiosConfig.post("/upload/changename", {name:namenamestate,number:e.number})
+      .then((res) => {
+        if(res.data.err){
+          setErrorState(res.data.err)
+          return
+        }
+        e.name = namenamestate
+        setLoader(false)
+        dispatch({type:ActionTypes.EDIT_ITEM,data:{number:e.number,ele:e}})
+        setNameState('')
+
+      })
+      .catch((err) => {
+        console.log(err);
+        setmsg(err.message)
+        setLoader(false)
+        setErrorState(err.message)
+        setNameState('')
+      });
+    
+  } catch (e) {
+    console.log(e);
+    setmsg(e.message)
+        setLoader(false)
+        setErrorState(e.message)
+        setNameState('')
+  }
+}
+
+async function changeDate(e){
+  try {
+    setLoader(true)
+    
+    await AxiosConfig.post("/upload/changedate", {name:date,number:e.number})
+      .then((res) => {
+        if(res.data.err){
+          setErrorState(res.data.err)
+          return
+        }
+        e.date = date
+        setLoader(false)
+        dispatch({type:ActionTypes.EDIT_ITEM,data:{number:e.number,ele:e}})
+        setDateState('')
+
+      })
+      .catch((err) => {
+        console.log(err);
+        setmsg(err.message)
+        setLoader(false)
+        setErrorState(err.message)
+        setDateState('')
+      });
+    
+  } catch (e) {
+    console.log(e);
+    setmsg(e.message)
+        setLoader(false)
+        setErrorState(e.message)
+        setDateState('')
+  }
+}
+
+async function changeSize(e){
+  try {
+    setLoader(true)
+    
+    await AxiosConfig.post("/upload/changesize", {name:size,number:e.number})
+      .then((res) => {
+        if(res.data.err){
+          setErrorState(res.data.err)
+          return
+        }
+        e.size = size
+        setLoader(false)
+        dispatch({type:ActionTypes.EDIT_ITEM,data:{number:e.number,ele:e}})
+        setSizeState('')
+
+      })
+      .catch((err) => {
+        console.log(err);
+        setmsg(err.message)
+        setLoader(false)
+        setErrorState(err.message)
+        setSizeState('')
+      });
+    
+  } catch (e) {
+    console.log(e);
+    setmsg(e.message)
+        setLoader(false)
+        setErrorState(e.message)
+        setSizeState('')
+  }
+}
+
+
+
   return (
-    <div>
+    <div className='w100  flexcenter'>
       {error}
       {user.isLog == false? 
-    <div className="form">
-      <form onSubmit={logins} action="">
-        <input type="text" name='name' onChange={setValeuOnChane} />
-        <input type="password" name="password" onChange={setpassValeuOnChane} id="password" />
-        <button>login</button>
+    <div className=" flexrow divlogin ">
+      <form onSubmit={logins} action="" className='flexcol center formform'>
+        <input type="text" name='name' onChange={setValeuOnChane} className='inputext' />
+        <input type="password" name="password" onChange={setpassValeuOnChane} id="password" className='inputext' />
+        <button className='bunnon'  >התחבר</button>
       </form>
+      <div className="bgimage2">
+
+      </div>
     </div>
 
     :
    
     <div>
-       <Uploadform Lodar={Lodar} msg={msg} upload={upload} />
+     
+<div className={"all_upload positionfixale" }>
+<div className='posrel'>    
+  <button className='closebtn' onClick={openwind}>{openwindow? 'סגור חלון':'הוסף תמונה'}</button>
+</div>
+   <Uploadform openwindow={openwindow} Lodar={Lodar} msg={msg} upload={upload} />
+</div>
+<div className="navFilter">
+  <div className="flexcol">
+  <div className="filter"><p className="p">water</p></div>
+  <div className="filter"><p className="p">oil</p></div>
+  <div className="filter"><p className="p">drawing</p></div>
+  </div>
+</div>
+      
+       
        <br /><br /><br /><br /><br />
-       <List deletework={deletework} data={item.item}/>
+       <List changeName={changeName} changeSize={changeSize} changeDate={changeDate} getname={getname} getdate={getdate} getsize={getsize} deletework={deletework} data={item.item}/>
     </div>
 
   

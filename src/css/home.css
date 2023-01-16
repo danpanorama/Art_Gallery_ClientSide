@@ -165,13 +165,14 @@ background-position: 50% 50%;
 
 
 
-@media screen and (max-width: 1440px) { 
+@media screen and (max-width: 1440px) {  
    .div_inside_contact{
        width: 80%;
    }
    .form_info_div{
        padding: 20px;
    }
+
    .nav_bar{
        width: 97% !important;
        justify-content: space-evenly;
@@ -211,8 +212,24 @@ background-position: 50% 50%;
 
    } */
 }
+
+
+
+
+@media screen and (max-width: 1300px) { 
+.gridlist{
+    grid-template-columns: 1fr  1fr !important;
+    width: 70% !important;
+}
+
+}
+
+
 @media screen and (max-width: 800px) { 
-    
+    .gridlist{
+        grid-template-columns: 1fr   !important;
+        width: 70% !important;
+    }
     .Link{
         padding: 0 !important;
     }

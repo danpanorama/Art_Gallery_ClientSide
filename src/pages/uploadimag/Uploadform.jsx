@@ -8,26 +8,27 @@ function Uploadform(props) {
   const fileref = useRef(null);
 
   return (
-    <div className="all_upload">
+    <div className={props.openwindow?"" : "all_uploaddesable"}>
       <div className="formdiv">
-        <h1>upload files</h1>
+        <h1>העלה תמונה חדשה </h1>
         <div className="center">
           <form
-            className="form flexcenter"
+            className="formupload flexcenter"
             onSubmit={props.upload.handleSubmit}
             encType="multipart/form-data"
           >
             <input
               type="text"
               name="name"
-              placeholder="name"
+              placeholder="name" className="inputext"
               values={props.upload.values.name}
               onChange={props.upload.handleChange}
             />
-             <input
+         
+         <input
               type="text"
               name="size"
-              placeholder="size"
+              placeholder="size" className="inputext"
               values={props.upload.values.size}
               onChange={props.upload.handleChange}
             />
@@ -35,10 +36,11 @@ function Uploadform(props) {
             <input
               type="text"
               name="date"
-              placeholder="date"
+              placeholder="date" className="inputext"
               values={props.upload.values.date}
               onChange={props.upload.handleChange}
             />
+       
 
             <input
               ref={fileref}
@@ -47,12 +49,13 @@ function Uploadform(props) {
               multiple
               accept="image/*"
               id="file"
+              className="inputext"
               values={props.upload.values.file}
               onChange={(e) => {
                 props.upload.setFieldValue("file", e.target.files[0]);
               }}
             />
-            <select onBlur={props.upload.handleBlur} values={props.upload.values.date}
+            <select className="inputext" onBlur={props.upload.handleBlur} values={props.upload.values.date}
               onChange={props.upload.handleChange} id="category" name="category">
   <option value="draw">draw</option>
   <option value="oil">oil</option>
@@ -69,7 +72,7 @@ function Uploadform(props) {
             </div> */}
             <br />
 
-            <input type="submit" />
+            <input className="inputext" type="submit" />
           </form>
           <div className="respond">
             {props.upload.values.file ? (

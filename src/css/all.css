@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden !important;
 }
 *{
     margin: 0;
@@ -32,6 +33,36 @@ body{
 }
 .h100{
     height: 100%;
+}
+.divlogin{
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 20px;
+    margin-top: 150px;
+}
+.inputext{
+    height: 50px;
+    width: 320px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+.formform{
+    margin-right: 20px;
+}
+.bunnon{
+    height: 50px;
+    background-color: #262626;
+    color: white;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+}
+.bunnon:hover{
+    background-color: white;
+    border: 2px solid #262626;
+    color: #262626;
 }
 .flexcenter{
     display: flex;
@@ -164,3 +195,123 @@ transition: all .5s ease;
 
 
 
+
+
+.bgimage2{
+    height: 400px;
+    width: 400px;
+    background-image: url('../image/marioface.jpeg');
+    object-fit: cover;
+    background-size: cover;
+
+}
+
+.positionfixale{
+   position: fixed;
+top: 10%;
+right: 5%; 
+z-index: 999999;
+
+}
+
+
+.all_upload{
+padding: 20px;
+ background-color: #5cb6a4;
+border-radius: 25px;
+transition: 1l .4s ease;
+max-height: 600px;
+max-width: 500px;
+}
+
+.all_uploaddesable{
+    transition: 1l .4s ease;
+padding: 20px;
+ background-color: #5cb6a4;
+border-radius: 25px;
+height: 0;
+width: 6px;
+opacity: 0;
+visibility: hidden;
+}
+
+.closebtn{
+    border-radius: 25px;
+    margin-top: 20px;
+    position: absolute;
+    top: -35px;
+    left: -35px;
+    padding: 3px;
+    outline: none;
+    border: none;
+   
+}
+.posrel{
+    position: relative;
+}
+
+
+
+
+.gridlist{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.cardoflist{
+    padding: 20px;
+    border-bottom: 1px solid black;
+    position: relative;
+    direction: rtl;
+  
+}
+.navFilter{
+    position: fixed;
+    top: 40%;
+    left: 1%;
+  padding: 20px;
+  background-color: antiquewhite;
+  border-radius: 25px;
+}
+
+.deleteclick{
+    background-color: red;
+    padding: 10px;
+    border: white 1px solid ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+}
+.endf{
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.namek{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    width: 100%;
+}
+.margpad{
+    margin-top: 20px;
+}
+
+.inputlist{
+   
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 1rem;
+}
+
+.changebtn{
+    margin-right: 5px;
+    padding: 3px;
+   background: none;
+  
+
+}

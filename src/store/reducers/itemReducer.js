@@ -20,6 +20,22 @@ const reducer = (state = initialState, action) => {
        
         return newState
 
+        case actionTypes.EDIT_ITEM:
+          const edit = {...state}; 
+
+          if(action.data){
+            edit.item.map((e)=>{
+              if(e.number == action.data.number){
+                e = action.data.ele
+              }
+            })
+          }
+
+
+        return edit
+
+
+
         
     case actionTypes.DELET_ITEM:
     const deleteState = {...state}; 
@@ -35,7 +51,6 @@ const reducer = (state = initialState, action) => {
 
     case actionTypes.SET:
     const setStete = {...state}; 
-    console.log(action.data)
     if(action.data){
        setStete.item = action.data.data
     }

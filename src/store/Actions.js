@@ -16,6 +16,10 @@ export const ADD_ITEM = "ADD_ITEM";
 export const DELET_ITEM = "DELET_ITEM";
 export const SET = "SET";
 
+export const EDIT_ITEM = "EDIT_ITEM";
+
+
+
 
 
 
