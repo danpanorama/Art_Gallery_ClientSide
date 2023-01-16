@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import '../../css/home.css'
+import { NavLink } from "react-router-dom";
 
 function Bio(props) {
 
@@ -23,6 +24,7 @@ function Bio(props) {
         <p className="txtspace">I studied drawing, painting and the principles of art at the studio of the painter Marek Yanai in Jerusalem, 
         and I have a diploma in architecture from the Shenkar School of Practical Engineering (2012, Tel-Aviv)
 </p> 
+<NavLink to='uploadadmin' >upload</NavLink>
 
 
     </div>
