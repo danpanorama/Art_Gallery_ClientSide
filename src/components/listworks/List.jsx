@@ -28,18 +28,18 @@ function List(props) {
                         placeholder={e.name}
                         onChange={props.getname}
                       />
-                      <button onClick={props.changeName} className="changebtn">שנה</button>
+                      <button onClick={()=>{props.changeName(e)}} className="changebtn">שנה</button>
                     </div>
                     <div className="namek">
                       {" "}
-                      <label htmlFor="">גודל</label>
+                      <label htmlFor="">גודל</label>  
                       <input
                         type="text"
                         className="inputlist"
                         placeholder={e.size}
                         onChange={props.getsize}
                       />
-                      <button onClick={props.changeSize} className="changebtn">שנה</button>
+                      <button onClick={()=>{props.changeSize(e)}} className="changebtn">שנה</button>
                     </div>
                     <div className="namek">
                       <label htmlFor="">תאריך</label>
@@ -49,11 +49,11 @@ function List(props) {
                         placeholder={e.date}
                         onChange={props.getdate}
                       />
-                      <button onClick={props.changeDate} className="changebtn">שנה</button>
+                      <button onClick={()=>{props.changeDate(e)}} className="changebtn">שנה</button>
                     </div>
                     <div className="namek">
                       <select
-                        onChange={props.getselection}
+                        onChange={()=>{props.getselection(e)}}
                         value={e.category}
                         name=""
                         id=""

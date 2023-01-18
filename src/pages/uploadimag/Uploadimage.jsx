@@ -215,7 +215,7 @@ async function changeName(e){
 }
 
 async function changeDate(e){
-  try {
+  try { 
     setLoader(true)
     
     await AxiosConfig.post("/upload/changedate", {name:date,number:e.number})
