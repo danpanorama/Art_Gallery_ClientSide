@@ -218,7 +218,7 @@ async function changeDate(e){
   try { 
     setLoader(true)
     
-    await AxiosConfig.post("/upload/changedate", {name:date,number:e.number})
+    await AxiosConfig.post("/upload/changedate", {date:date,number:e.number})
       .then((res) => {
         if(res.data.err){
           setErrorState(res.data.err)
@@ -251,7 +251,7 @@ async function changeSize(e){
   try {
     setLoader(true)
     
-    await AxiosConfig.post("/upload/changesize", {name:size,number:e.number})
+    await AxiosConfig.post("/upload/changesize", {size:size,number:e.number})
       .then((res) => {
         if(res.data.err){
           setErrorState(res.data.err)

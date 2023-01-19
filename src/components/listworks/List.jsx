@@ -45,7 +45,7 @@ function List(props) {
                       <label htmlFor="">תאריך</label>
                       <input
                         type="text"
-                        className="inputlist"
+                        className="inputlist" 
                         placeholder={e.date}
                         onChange={props.getdate}
                       />
