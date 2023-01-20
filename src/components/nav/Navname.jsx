@@ -20,7 +20,7 @@ function Navname(props) {
   return (
     <div className="all_nav">
       <div className="nav_bar flexrow ">
-        <div className="name">mariosss morcos</div>
+        <div className="name">mario morcos</div>
 
         <div className="links_all_div ">
           <div className="lu_links flexrow ">
